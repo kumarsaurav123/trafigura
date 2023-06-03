@@ -2,23 +2,30 @@ package org.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 
 
 @Data
 @AllArgsConstructor
-public class Task {
-    private final int id;
+@EqualsAndHashCode
+public class Task implements Comparable<Task> {
+    private final Integer id;
     private final List<DataPoint> inputDataNode;
     private final List<DataPoint> outPutDataNode;
-    private final Queue<DataPoint> taskQueue;
-    private final boolean[] allExecutedTasks;
+    private final Queue<DataPoint> changedDataPointQueue;
+    private final Set<Task> allExecutedTasks;
 
     public void trigger() {
-        outPutDataNode.stream().filter(i->!taskQueue.contains(i))
-                        .forEach(taskQueue::add);
-//        taskQueue.addAll(outPutDataNode);
+
+        changedDataPointQueue.addAll(outPutDataNode);
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.getId().compareTo(o.getId());
     }
 }
