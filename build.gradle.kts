@@ -16,8 +16,12 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("junit:junit:4.13.1")
     annotationProcessor("org.projectlombok:lombok:1.18.8")
     implementation("org.projectlombok:lombok:1.18.8")
+    implementation("com.google.guava:guava:30.1-jre")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.4.4")
+
 
 }
 tasks.test {
