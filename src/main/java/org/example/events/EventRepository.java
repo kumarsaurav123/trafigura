@@ -1,14 +1,13 @@
 package org.example.events;
 
 import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
-import org.example.model.BuySell;
 import org.example.model.Transaction;
-import org.example.model.Type;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Collection;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class EventRepository {
