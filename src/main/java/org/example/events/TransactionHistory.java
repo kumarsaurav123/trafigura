@@ -13,7 +13,7 @@ public class TransactionHistory {
     {
         if(Objects.isNull(lastAppliedMap.get(transaction.getSecurityCode(), transaction.getTradeID())))
         {
-            lastAppliedMap.put(transaction.getSecurityCode(), transaction.getTradeID(), new TreeSet<>(Comparator.comparing(Transaction::getVersion)));
+            lastAppliedMap.put(transaction.getSecurityCode(), transaction.getTradeID(), new TreeSet<>(Comparator.comparing(Transaction::getTransactionID)));
         }
         lastAppliedMap.get(transaction.getSecurityCode(), transaction.getTradeID()).add(transaction);
     }
