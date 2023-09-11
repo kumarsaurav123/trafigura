@@ -31,7 +31,7 @@ public class StateProcessor {
     public void triggerStateChange(Transaction t,Transaction previous)
     {
 
-            int prevChange=eventProcessor.processIndiviudalTransaction(previous,Integer.MIN_VALUE);
+            int prevChange=eventProcessor.processIndiviudalTransaction(previous,0);
             int change=eventProcessor.processIndiviudalTransaction(t,prevChange);
             int val=getCurrentPositions(t.getSecurityCode())+change;
             addState(t.getSecurityCode(),val);

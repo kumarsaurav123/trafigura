@@ -22,9 +22,8 @@ public class TestDriver {
 
         EventProcessor eventProcessor = new EventProcessor();
         EventRepository eventRepository = new EventRepository();
-        TransactionHistory transactionHistory = new TransactionHistory();
         StateProcessor stateProcessor = new StateProcessor(eventProcessor);
-        Trigger trigger = new Trigger(eventRepository, transactionHistory, stateProcessor);
+        Trigger trigger = new Trigger(eventRepository, stateProcessor);
 
         Files.lines(Paths.get(args[0])).
                 skip(1)

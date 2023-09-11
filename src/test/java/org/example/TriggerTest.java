@@ -25,9 +25,8 @@ public class TriggerTest {
 
         EventProcessor eventProcessor = new EventProcessor();
         EventRepository eventRepository = new EventRepository();
-        TransactionHistory transactionHistory = new TransactionHistory();
         StateProcessor stateProcessor = new StateProcessor(eventProcessor);
-        trigger = new Trigger(eventRepository, transactionHistory, stateProcessor);
+        trigger = new Trigger(eventRepository, stateProcessor);
 
 
     }
@@ -74,7 +73,7 @@ public class TriggerTest {
 
         ;
 
-        Assert.assertEquals(80,trigger.trigger(t2));
+        Assert.assertEquals(0,trigger.trigger(t2));
         Assert.assertEquals(80, trigger.trigger(t1));
 
     }

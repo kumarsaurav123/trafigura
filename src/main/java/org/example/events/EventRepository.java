@@ -33,5 +33,16 @@ public class EventRepository {
                .collect(Collectors.toList()));
        return allEvents;
    }
+    public Transaction getLastEvent(String securityCode,Integer tradeID)
+    {
+        if(Objects.nonNull(eventTable.get(securityCode,tradeID)) && eventTable.get(securityCode,tradeID).size()>0) {
+            return eventTable.row(securityCode).get(tradeID).last();
+        }
+        return null;
+    }
+    public void clear(String securityCode,Integer tradeID)
+    {
 
+            eventTable.get(securityCode,tradeID).clear();
+    }
 }

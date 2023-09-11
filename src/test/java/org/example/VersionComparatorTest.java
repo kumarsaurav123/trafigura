@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.events.TransactionHistory;
 import org.example.events.VersionComparator;
 import org.example.model.BuySell;
 import org.example.model.Transaction;
