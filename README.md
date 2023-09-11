@@ -6,4 +6,4 @@ OR
 #
 1) copy jar to a location
 2) Copy transaction.csv on same folder
-2) run java -jar trafigura-1.0-SNAPSHOT-all.jar ./input.txt
+2) run java -jar trafigura-1.0-SNAPSHOT-all.jar ./transaction.csv
